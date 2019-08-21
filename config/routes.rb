@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'static_pages#index'
+  # associating courses content for index and show. 
+    resources :courses, only: [:index, :show]
 
   # associating namespace for instructor courses
     namespace :instructor do
