@@ -1,7 +1,7 @@
 class Instructor::LessonsController < ApplicationController
 
     before_action :authenticate_user!
-    before_actin :require_authorized_for_current_section
+    before_action :require_authorized_for_current_section
 
 # load section that's referenced by URL. 
     def new
