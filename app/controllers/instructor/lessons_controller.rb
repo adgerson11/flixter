@@ -5,16 +5,10 @@ class Instructor::LessonsController < ApplicationController
 
 # load section that's referenced by URL. 
     def new
-# adding unauthorized access to the page if trying to add to lesson another user created. 
-        #if current_section.course.user != current_user
-            #return render plain: 'Unauthorized', status: :unauthorized
-        #end
         @lesson = Lesson.new
     end
 # associate the create button with lessons and sections. 
     def create
-        #if current_section.course.user != current_user
-            #return render plain: 'Unauthorized', status: :unauthorized
         @lesson = current_section.lessons.create(lesson_params)
         redirect_to instructor_course_path(current_section.course)
     end 
@@ -23,7 +17,7 @@ class Instructor::LessonsController < ApplicationController
 
     
     def require_authorized_for_current_section
-        if current_sectin.course.user != current_user
+        if current_section.course.user != current_user
             return render plain: 'Unauthorized', status: :unauthorized
         end 
     end 
