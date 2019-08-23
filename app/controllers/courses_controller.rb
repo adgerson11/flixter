@@ -3,4 +3,8 @@ class CoursesController < ApplicationController
     def index
         @courses = Course.all
     end 
+# will associate the routes to the courses show page. 
+    def show
+        @course = Course.find(params[:id])
+    end
 end
