@@ -7,8 +7,11 @@ Rails.application.routes.draw do
 
   # associating namespace for instructor courses
     namespace :instructor do
-      resources :courses, only:  [:new, :create, :show]
+      resources :courses, only:  [:new, :create, :show] do
+  # associating sections with the courses. 
+        resources :sections, only: [:new, :create]
     end
+  end
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -2,6 +2,7 @@ class Course < ApplicationRecord
 # associations between our users and courses
 
     belongs_to :user
+    has_many :sections
 
 # this validates that a course has a appropriate information upon creation.  
 
