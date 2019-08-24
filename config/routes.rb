@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   # associating courses content for index and show. 
     resources :courses, only: [:index, :show]
+    resources :lessons, only: [:show]
 
   # associating namespace for instructor courses
     namespace :instructor do
