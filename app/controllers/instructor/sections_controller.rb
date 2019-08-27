@@ -4,13 +4,12 @@ class Instructor::SectionsController < ApplicationController
 
 # associating the course id with the course section. 
     def new
-# new sections for each form.
         @section = Section.new
     end
 # create a section in our database connected to the course and redirect the user to course page. 
     def create
-        @section = @course.sections.create(section_params)
-        redirect_to instructor_course_path(@course)
+        @section = current_course.sections.create(section_params)
+        redirect_to instructor_course_path(current_course)
     end
 
     private 
@@ -28,6 +27,6 @@ class Instructor::SectionsController < ApplicationController
 
 
     def section_params
-        params.require(:section).permit(:title)
+        params.require(:section).permit(:title, :image)
     end
 end
