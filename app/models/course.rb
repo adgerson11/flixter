@@ -1,10 +1,10 @@
 class Course < ApplicationRecord
 # associations between our users and courses
+    mount_uploader :image, ImageUploader
 
     belongs_to :user
     has_many :sections
-
-    mount_uploader :image, ImageUploader
+    has_many :enrollments
 
 # this validates that a course has a appropriate information upon creation.  
 
