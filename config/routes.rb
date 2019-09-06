@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   # associating namespace for instructor courses
     namespace :instructor do
-      
+      resources :lessons, only: [:update]
       resources :sections, only: [] do
         resources :lessons, only: [:new, :create]
       end
