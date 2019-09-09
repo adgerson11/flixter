@@ -1,12 +1,9 @@
 class Instructor::SectionsController < ApplicationController
     before_action :authenticate_user!
-    before_action :require_authorized_for_current_course, only: [:new, :create]
+    before_action :require_authorized_for_current_course, only: [:create]
     before_action :require_authorized_for_current_section, only: [:update]
 
-# associating the course id with the course section. 
-    def new
-        @section = Section.new
-    end
+
 # create a section in our database connected to the course and redirect the user to course page. 
     def create
         @section = current_course.sections.create(section_params)
