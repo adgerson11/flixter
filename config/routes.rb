@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  resource :dashboard, only: [:show]
   root 'static_pages#index'
   # associating courses content for index and show. 
     resources :courses, only: [:index, :show] do
