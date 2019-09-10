@@ -30,12 +30,12 @@
         <%= image_tag course.image.to_s, class: 'img-fluid' %>
         <br />
         <div class="row">
-            <div clas="col-12 col-sm-8">
+            <div class="col-12 col-sm-8">
                 <%= course.description %>
         </div>
 
         <div class="col-12 col-sm-4 text-center">
-            <%= link_to "More Info...", course_path(course), class: 'btn btn-lg btn-primary' %>
+            <%= link_to "More Info...", course_path(course), class: 'btn btn-lg btn-primary float-right' %>
         </div>
     </div>
     <hr class="col-8 offset-2">
